@@ -24,9 +24,6 @@ class CreateContactsTable extends Migration
             
             $table->string('email')->nullable();
             $table->string('reg_address')->nullable();
-            // $table->string('state')->nullable();
-            // $table->string('district')->nullable();
-            // $table->string('city')->nullable();
             $table->integer('pin')->nullable();
 
             $table->timestamps();

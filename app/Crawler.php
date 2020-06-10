@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Crawler extends Model
 {
-    protected $fillable = ['link', 'status_code', 'crawlled'];
+    protected $fillable = ['url', 'title', 'status', 'is_crawled', 'is_scrapped'];
 }

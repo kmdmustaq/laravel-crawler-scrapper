@@ -15,5 +15,10 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
 
         factory(Location::class, 1)->create();
+        factory(Location::class, 1)->make([
+            'location' => 'India',
+            'level' => 0,
+            'parent' => 1
+        ]);
     }
 }

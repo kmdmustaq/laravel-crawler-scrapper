@@ -15,9 +15,11 @@ class CreateCrawlersTable extends Migration
     {
         Schema::create('crawlers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('link');
-            $table->integer('status_code')->nullable();
-            $table->boolean('crawlled')->default(0);
+            $table->string('url', '1024');
+            $table->text('title')->nullable();
+            $table->unsignedInteger('status')->nullable();
+            $table->boolean('is_crawled');
+            $table->boolean('is_scrapped')->default(0);
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class CreateListingAndComplainsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('company_infos_id');
             $table->foreign('company_infos_id')->references('id')->on('company_infos')->onDelete('cascade');
-            $table->enum('status', ['Listed', 'Not Listed'])->nullable();
+            $table->string('status')->nullable();
             $table->string('date_of_last_agm')->nullable();
             $table->string('date_of_balance_sheet')->nullable();
             $table->timestamps();

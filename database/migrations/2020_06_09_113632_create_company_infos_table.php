@@ -15,8 +15,9 @@ class CreateCompanyInfosTable extends Migration
     {
         Schema::create('company_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('CIN');
+            $table->string('cin');
             $table->string('name');
+            $table->string('status');
             $table->string('date_of_incorp');
             $table->string('reg_num');
             $table->string('cateogy');
@@ -24,6 +25,7 @@ class CreateCompanyInfosTable extends Migration
             $table->string('class');
             $table->string('roc_code');
             $table->string('num_of_mem')->default(0);
+            $table->string('url');
             $table->timestamps();
         });
     }
