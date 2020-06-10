@@ -43,7 +43,8 @@ class ScrappingController extends Controller
         
         // Fetting the records present in the Crawler model for scrapping
         $crawlerData = (new CrawlerLibrary)->getCrawlabuls();
-        
+        $scrapped = 0;
+
         // Looping of crawler data.
         foreach ($crawlerData as $crawl) {
             
@@ -69,10 +70,17 @@ class ScrappingController extends Controller
 
             // Updating the statues of the link.
             (new CrawlerLibrary)->scrapped($crawl->id);
-        
+            
+            $scrapped++;
         }
 
-        return response()->json(['data' => 'Success'], 200);
+        return response()->json([
+            'data' => [
+                    'Total_urls' => $crawlerData->count(),
+                    'Scrapped_urls' => $scrapped,
+                    'messgae' => 'Success'
+                ]
+        ], 200);
     }
 
     /**

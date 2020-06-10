@@ -26,6 +26,6 @@ class CrawlerLibrary {
      */
     public function getCrawlabuls()
     {
-        return Crawler::all();
+        return Crawler::where('is_scrapped', 0)->get();
     }
 }
